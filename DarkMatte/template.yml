@@ -1,6 +1,6 @@
 name: "DarkMatte Style"
 description: "DarkMatte style with gradient overlay and logo placement"
-version: "1.2"
+version: "1.3"
 
 # Steps — engine auto-normalises the base image to 1000x1500 before these run
 steps:
