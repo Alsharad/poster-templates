@@ -36,6 +36,25 @@ steps:
       - "+0+150"
       - "-composite"
 
+  - name: "Add title fallback"
+    condition: "not hasLogo and title != null"
+    args:
+      - "-font"
+      - "{{templateResources}}/fonts/core-sans-a/CoreSansA65Bold.otf"
+      - "-pointsize"
+      - "70"
+      - "-fill"
+      - "white"
+      - "-stroke"
+      - "none"
+      - "-strokewidth"
+      - "0"
+      - "-gravity"
+      - "south"
+      - "-annotate"
+      - "+0+175"
+      - "{{title|truncate(30)}}"
+
   - name: "Add season text"
     condition: "isSeason and seasonName != null"
     args:
