@@ -1,6 +1,6 @@
 name: "DarkMatte Style"
 description: "DarkMatte style with gradient overlay and logo placement"
-version: "1.5"
+version: "1.6"
 
 # Steps — engine auto-normalises the base image to 1000x1500 before these run
 steps:
@@ -11,7 +11,7 @@ steps:
       - "-colorspace"
       - "RGB"
 
-  - name: "Apply gradient overlay"
+  - name: "Apply solid color bottom"
     args:
       - "("
       - "-size"
@@ -21,14 +21,23 @@ steps:
       - "-gravity"
       - "south"
       - "-composite"
+
+  - name: "Apply gradient fade"
+    args:
       - "("
       - "-size"
-      - "1000x750"
+      - "1000x1300"
       - "xc:#1f1f1f"
       - "("
       - "-size"
-      - "1000x750"
-      - "gradient:black-white"
+      - "1000x1300"
+      - "-define"
+      - "gradient:center=500,0"
+      - "-define"
+      - "gradient:radii=2000,1300"
+      - "radial-gradient:black-white"
+      - "-gamma"
+      - "0.5"
       - ")"
       - "-alpha"
       - "off"
@@ -81,7 +90,7 @@ steps:
       - "-gravity"
       - "south"
       - "-geometry"
-      - "+0+175"
+      - "+0+160"
       - "-composite"
 
   - name: "Add season text"
