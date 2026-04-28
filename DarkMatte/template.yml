@@ -70,7 +70,7 @@ steps:
       - "-gravity"
       - "south"
       - "-geometry"
-      - "+0+175"
+      - "+0+150"
       - "-composite"
 
   - name: "Add title text"
@@ -109,5 +109,5 @@ steps:
       - "-gravity"
       - "south"
       - "-annotate"
-      - "+0+125"
+      - "+0+100"
       - "{{seasonName}}"
