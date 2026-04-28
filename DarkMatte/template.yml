@@ -65,7 +65,7 @@ steps:
       - "("
       - "{{logoPath}}"
       - "-resize"
-      - "600x260"
+      - "600x200"
       - ")"
       - "-gravity"
       - "south"
