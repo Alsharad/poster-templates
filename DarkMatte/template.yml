@@ -1,13 +1,13 @@
 name: "DarkMatte Style"
 description: "DarkMatte style with gradient overlay and logo placement"
-version: "1.6"
+version: "1.7"
 
 # Steps — engine auto-normalises the base image to 1000x1500 before these run
 steps:
   - name: "Darken base image"
     args:
       - "-level"
-      - "-54%,80%"
+      - "-54%,90%"
       - "-colorspace"
       - "RGB"
 
@@ -65,12 +65,12 @@ steps:
       - "("
       - "{{logoPath}}"
       - "-resize"
-      - "600x160"
+      - "600x150"
       - ")"
       - "-gravity"
       - "south"
       - "-geometry"
-      - "+0+150"
+      - "+0+125"
       - "-composite"
 
   - name: "Add title text"
@@ -90,7 +90,7 @@ steps:
       - "-gravity"
       - "south"
       - "-geometry"
-      - "+0+160"
+      - "+0+125"
       - "-composite"
 
   - name: "Add season text"
@@ -109,5 +109,5 @@ steps:
       - "-gravity"
       - "south"
       - "-annotate"
-      - "+0+100"
+      - "+0+80"
       - "{{seasonName}}"
