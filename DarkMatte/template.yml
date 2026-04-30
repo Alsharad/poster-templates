@@ -1,6 +1,6 @@
 name: "DarkMatte Style"
 description: "DarkMatte style with gradient overlay and logo placement"
-version: "1.7"
+version: "1.8"
 
 # Steps — engine auto-normalises the base image to 1000x1500 before these run
 steps:
@@ -60,7 +60,7 @@ steps:
       - "-composite"
 
   - name: "Add logo"
-    condition: "hasLogo and not isCollection"
+    condition: "hasLogo && !isCollection"
     args:
       - "("
       - "{{logoPath}}"
@@ -74,7 +74,7 @@ steps:
       - "-composite"
 
   - name: "Add logo (collection)"
-    condition: "hasLogo and isCollection"
+    condition: "hasLogo && isCollection"
     args:
       - "("
       - "{{logoPath}}"
@@ -108,7 +108,7 @@ steps:
       - "-composite"
 
   - name: "Add season text"
-    condition: "isSeason and seasonName != null"
+    condition: "isSeason && seasonName != null"
     args:
       - "-font"
       - "{{templateResources}}/fonts/core-sans-a/CoreSansA65Bold.otf"
