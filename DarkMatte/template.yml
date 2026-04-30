@@ -60,7 +60,7 @@ steps:
       - "-composite"
 
   - name: "Add logo"
-    condition: "hasLogo"
+    condition: "hasLogo and not isCollection"
     args:
       - "("
       - "{{logoPath}}"
@@ -71,6 +71,20 @@ steps:
       - "south"
       - "-geometry"
       - "+0+125"
+      - "-composite"
+
+  - name: "Add logo (collection)"
+    condition: "hasLogo and isCollection"
+    args:
+      - "("
+      - "{{logoPath}}"
+      - "-resize"
+      - "600x150"
+      - ")"
+      - "-gravity"
+      - "south"
+      - "-geometry"
+      - "+0+160"
       - "-composite"
 
   - name: "Add title text"
